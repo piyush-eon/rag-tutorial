@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* App colours, used as bg-page, bg-card, text-muted, border-line... They follow the system theme. */
+@theme {
+  --color-page: var(--color-zinc-50);
+  --color-card: var(--color-white);
+  --color-soft: var(--color-zinc-50);
+  --color-ink: var(--color-zinc-900);
+  --color-muted: var(--color-zinc-500);
+  --color-line: var(--color-zinc-200);
+  --color-tint: var(--color-green-50);
+  --color-chip: var(--color-green-100);
+  --color-chip-ink: var(--color-green-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-page: var(--color-zinc-950);
+    --color-card: var(--color-zinc-900);
+    --color-soft: var(--color-zinc-950);
+    --color-ink: var(--color-zinc-100);
+    --color-line: var(--color-zinc-800);
+    --color-tint: var(--color-green-950);
+    --color-chip: var(--color-green-950);
+    --color-chip-ink: var(--color-green-400);
+  }
+}
+
+/* Plain `border` uses the line colour instead of Tailwind v4's default (currentColor) */
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    border-color: var(--color-line);
+  }
+}
