@@ -15,7 +15,7 @@ Want to build it yourself? Start from the [`main`](../../tree/main) branch, the 
 
 ## Run it
 
-1. **Create a [free Supabase project](https://supabase.com/dashboard).**
+1. **Create a [free Supabase project](https://supabase.link/8lqB5J2).**
 2. **Database:** paste `supabase/schema.sql` into the SQL Editor and run it.
 3. **Gemini key:** create a free key in [Google AI Studio](https://aistudio.google.com/apikey). In the dashboard, open **Edge Functions → Secrets** and add it as `GEMINI_API_KEY`.
 4. **Functions:** for each of `embed`, `ingest` and `chat`, go to **Edge Functions → Deploy a new function → Via Editor**, use that name, paste the matching `supabase/functions/<name>/index.ts` and click **Deploy function**. Then, on the function's **Settings** tab, turn off **Verify JWT with legacy secret** and click **Save changes**.
