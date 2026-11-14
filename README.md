@@ -11,6 +11,7 @@ Want to build it yourself? Start from the [`main`](../../tree/main) branch, the 
 | `src/` | The React app. Everything it sends to the backend is in `src/api.ts`. |
 | `supabase/schema.sql` | Tables, grants, `match_chunks` and `hybrid_search`. |
 | `supabase/functions/` | The `embed`, `ingest` and `chat` Edge Functions. |
+| `try.js` | Calls each Edge Function from Node, without the app. |
 | `demo-docs/` | Sample company handbooks to upload. |
 
 ## Run it
@@ -27,5 +28,12 @@ npm run dev
 ```
 
 Open http://localhost:5173, upload the files in `demo-docs/northwind/`, and ask *"Can I book a business class flight?"* or *"What does ERR_4021 mean?"*.
+
+To call a function without the app, use `try.js`:
+
+```bash
+node --env-file=.env.local try.js embed "budget airfare"
+node --env-file=.env.local try.js chat "Can I book a business class flight?"
+```
 
 Prefer the command line? The same functions deploy with the [Supabase CLI](https://supabase.com/docs/guides/functions/quickstart): `supabase functions deploy <name> --no-verify-jwt`.
